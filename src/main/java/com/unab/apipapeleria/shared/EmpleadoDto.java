@@ -11,7 +11,7 @@ public class EmpleadoDto implements Serializable {
     private String apellidos;
     private String email;
     private String password;
-    private String passwordEncriptada;
+    private String passworEncriptada;
 
     public long getId() {
         return this.id;
@@ -61,12 +61,12 @@ public class EmpleadoDto implements Serializable {
         this.password = password;
     }
 
-    public String getPasswordEncriptada() {
-        return this.passwordEncriptada;
+    public String getPassworEncriptada() {
+        return this.passworEncriptada;
     }
 
-    public void setPasswordEncriptada(String passwordEncriptada) {
-        this.passwordEncriptada = passwordEncriptada;
+    public void setPassworEncriptada(String passworEncriptada) {
+        this.passworEncriptada = passworEncriptada;
     }
 
 }
