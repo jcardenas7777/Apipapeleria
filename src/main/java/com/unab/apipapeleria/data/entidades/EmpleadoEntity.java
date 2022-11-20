@@ -6,8 +6,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Index;
+import javax.persistence.Table;
+
+
 
 @Entity(name = "empleado")
+@Table(indexes = {
+    @Index(columnList = "IdEmpleado",name = "index_IdEmpleado",unique = true),
+    @Index(columnList = "email",name = "index_email",unique = true),
+
+})
 public class EmpleadoEntity implements Serializable {
     private static final long serialVersionUID=1L;
 
@@ -26,9 +35,6 @@ public class EmpleadoEntity implements Serializable {
 
     @Column(nullable = false,length = 50)
     private String email;
-
-    @Column(nullable = false,length = 100)
-    private String password;
 
     @Column(nullable = false,length = 100)
     private String passwordEncriptada;
@@ -73,13 +79,6 @@ public class EmpleadoEntity implements Serializable {
         this.email = email;
     }
 
-    public String getPassword() {
-        return this.password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public String getPasswordEncriptada() {
         return this.passwordEncriptada;
